@@ -50,3 +50,6 @@ data/
 .DS_Store
 Thumbs.db
 
+# 检查文件（不提交）
+UPLOAD_CHECK.md
+
