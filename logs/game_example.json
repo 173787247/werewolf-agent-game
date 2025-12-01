@@ -1,0 +1,157 @@
+{
+  "timestamp": "2025-01-15T10:30:00",
+  "game_history": [
+    {
+      "round": 1,
+      "phase": "night_action",
+      "player": "Alice",
+      "data": {
+        "action": "kill",
+        "target": "Charlie",
+        "reasoning": "Charlie 看起来分析能力很强，可能会威胁到狼人"
+      }
+    },
+    {
+      "round": 1,
+      "phase": "day_announce",
+      "deaths": ["Charlie"]
+    },
+    {
+      "round": 1,
+      "phase": "discussion",
+      "player": "Alice",
+      "data": {
+        "speech": "昨晚 Charlie 死了，这很遗憾。我觉得我们需要仔细分析一下。Bob 的发言让我觉得有些可疑。",
+        "suspicion": "Bob",
+        "reasoning": "Bob 在发言时显得有些紧张"
+      }
+    },
+    {
+      "round": 1,
+      "phase": "discussion",
+      "player": "Bob",
+      "data": {
+        "speech": "我同意 Alice 的分析。Charlie 的死确实很可疑。但我认为我们需要更多信息才能做出判断。",
+        "suspicion": null,
+        "reasoning": "目前信息不足，需要观察"
+      }
+    },
+    {
+      "round": 1,
+      "phase": "discussion",
+      "player": "David",
+      "data": {
+        "speech": "我注意到 Alice 很早就开始怀疑 Bob，这让我觉得有些奇怪。也许我们应该更谨慎一些。",
+        "suspicion": "Alice",
+        "reasoning": "Alice 过于急于指认他人",
+        "evidence": "Alice 在 Charlie 刚死就立即怀疑 Bob"
+      }
+    },
+    {
+      "round": 1,
+      "phase": "discussion",
+      "player": "Eve",
+      "data": {
+        "speech": "我同意 David 的观点。Alice 的行为确实有些可疑。我建议我们投票给 Alice。",
+        "suspicion": "Alice",
+        "reasoning": "Alice 过于激进，可能是狼人"
+      }
+    },
+    {
+      "round": 1,
+      "phase": "voting",
+      "votes": {
+        "Alice": "Bob",
+        "Bob": "Alice",
+        "David": "Alice",
+        "Eve": "Alice"
+      },
+      "vote_counts": {
+        "Alice": 3,
+        "Bob": 1
+      }
+    },
+    {
+      "round": 1,
+      "phase": "execution",
+      "executed": "Alice"
+    },
+    {
+      "round": 2,
+      "phase": "night_action",
+      "player": "Eve",
+      "data": {
+        "action": "kill",
+        "target": "David",
+        "reasoning": "David 的分析能力很强，需要尽快除掉"
+      }
+    },
+    {
+      "round": 2,
+      "phase": "day_announce",
+      "deaths": ["David"]
+    },
+    {
+      "round": 2,
+      "phase": "discussion",
+      "player": "Bob",
+      "data": {
+        "speech": "David 也死了。现在只剩下我和 Eve。如果 Eve 是狼人，那么游戏就结束了。让我仔细想想...",
+        "suspicion": "Eve",
+        "reasoning": "Eve 在上一轮投票中表现可疑",
+        "evidence": "Eve 急于投票给 Alice，可能是为了转移注意力"
+      }
+    },
+    {
+      "round": 2,
+      "phase": "discussion",
+      "player": "Eve",
+      "data": {
+        "speech": "Bob，你怀疑我是对的。但请想想，如果我是狼人，我早就赢了。我认为我们应该相信彼此。",
+        "suspicion": null,
+        "reasoning": "试图说服 Bob 自己是村民"
+      }
+    },
+    {
+      "round": 2,
+      "phase": "voting",
+      "votes": {
+        "Bob": "Eve",
+        "Eve": "Bob"
+      },
+      "vote_counts": {
+        "Bob": 1,
+        "Eve": 1
+      }
+    },
+    {
+      "round": 2,
+      "phase": "execution",
+      "executed": "Bob"
+    }
+  ],
+  "cost_summary": {
+    "total_calls": 15,
+    "total_tokens": 12500,
+    "prompt_tokens": 8000,
+    "completion_tokens": 4500,
+    "average_latency": 1.2,
+    "total_time": 18.5,
+    "model_usage": {
+      "deepseek-chat": {
+        "calls": 15,
+        "total_tokens": 12500,
+        "prompt_tokens": 8000,
+        "completion_tokens": 4500
+      }
+    },
+    "gpu_estimate": {
+      "estimated_flops": 12500000,
+      "total_time_seconds": 18.5,
+      "tokens_per_second": 675.68,
+      "note": "这是基于 token 数的简化估算，实际 GPU 使用取决于模型大小和推理配置"
+    }
+  },
+  "formatted_log": "[第1轮-夜晚] Alice 选择目标: Charlie\n[第1轮-天亮] 死亡玩家: Charlie\n[第1轮-发言] Alice: 昨晚 Charlie 死了，这很遗憾。我觉得我们需要仔细分析一下。Bob 的发言让我觉得有些可疑。\n[第1轮-发言] Bob: 我同意 Alice 的分析。Charlie 的死确实很可疑。但我认为我们需要更多信息才能做出判断。\n[第1轮-发言] David: 我注意到 Alice 很早就开始怀疑 Bob，这让我觉得有些奇怪。也许我们应该更谨慎一些。\n[第1轮-发言] Eve: 我同意 David 的观点。Alice 的行为确实有些可疑。我建议我们投票给 Alice。\n[第1轮-投票] 投票结果: {\"Alice\": 3, \"Bob\": 1}\n[第1轮-处决] 玩家 Alice 被处决\n[第2轮-夜晚] Eve 选择目标: David\n[第2轮-天亮] 死亡玩家: David\n[第2轮-发言] Bob: David 也死了。现在只剩下我和 Eve。如果 Eve 是狼人，那么游戏就结束了。让我仔细想想...\n[第2轮-发言] Eve: Bob，你怀疑我是对的。但请想想，如果我是狼人，我早就赢了。我认为我们应该相信彼此。\n[第2轮-投票] 投票结果: {\"Bob\": 1, \"Eve\": 1}\n[第2轮-处决] 玩家 Bob 被处决"
+}
+
