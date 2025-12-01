@@ -1,0 +1,55 @@
+game:
+  # 玩家配置
+  players:
+    total: 5
+    villagers: 3
+    werewolves: 2
+  
+  # 角色性格类型
+  personality_types:
+    werewolf:
+      - aggressive  # 激进型
+      - cautious    # 谨慎型
+    villager:
+      - analytical  # 分析型
+      - cautious    # 谨慎型
+      - observant   # 观察型
+  
+  # 游戏阶段
+  phases:
+    - night_action    # 夜晚行动
+    - day_announce     # 天亮公布
+    - discussion       # 发言环节
+    - voting           # 投票处决
+    - game_end         # 游戏结束
+
+# LLM 配置
+llm:
+  model: "deepseek-chat"  # 或 "gpt-4", "gpt-3.5-turbo"
+  temperature: 0.7
+  max_tokens: 1000
+
+# 记忆配置
+memory:
+  type: "faiss"  # "faiss" 或 "milvus"
+  embedding_model: "text-embedding-ada-002"  # 或使用本地模型
+  max_memory_items: 1000
+
+# RAG 配置
+rag:
+  top_k: 5  # 检索前 K 条相关历史发言
+  similarity_threshold: 0.7
+
+# 日志配置
+logging:
+  level: "INFO"
+  format: "json"  # "json" 或 "text"
+  save_to_file: true
+  file_path: "./logs/game_{timestamp}.json"
+
+# 成本追踪
+cost_tracking:
+  enabled: true
+  track_tokens: true
+  track_latency: true
+
